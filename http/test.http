@@ -1,0 +1,131 @@
+# Base URLs
+@gateway-url = http://localhost:4000
+@user-service-url = http://localhost:4007
+@product-service-url = http://localhost:4006
+@brand-service-url = http://localhost:4005
+
+# Account Info
+@admin-email = admin@blindboxes.vn
+@admin-password = @2
+@member-email = michel@blindboxes.vn
+@member-password = @2
+
+# Variables to store tokens (will be set manually after each request)
+# NOTE: The token below is MODERATOR role - use admin login to get ADMIN token
+@access-token = eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiTU9ERVJBVE9SIiwidXNlcklkIjo0LCJlbWFpbCI6Im1pY2hlbEBibGluZGJveGVzLnZuIiwidXNlcm5hbWUiOiJtb2RtaWNoZWwiLCJzdWIiOiJtb2RtaWNoZWwiLCJleHAiOjE3NjIxODUzMTF9.3rEO8MwFfLMLzUuYmZVQ642Gji2oz_CuTlyfgQjsJLU
+@refresh-token = eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ0b2tlblR5cGUiOiJyZWZyZXNoIiwidXNlcklkIjoxLCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzYwMjUyMTUyfQ.6j_-0Z5IQGPERFaMGxFZOxVmCNPptWwQh-bT3wkxJHs
+
+# Public Endpoint
+###
+GET {{product-service-url}}/api/blindboxes
+
+# Public Endpoint via Brand Service
+###
+GET {{brand-service-url}}/api/blindboxes
+
+# Public Endpoint via API Gateway
+###
+GET {{gateway-url}}/api/blindboxes
+
+# Create Blind Box (Direct to Service - for testing service directly)
+###
+POST {{product-service-url}}/api/blindboxes
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "hehe",
+  "rarity": "hehe",
+  "price": 1,
+  "stock": 1,
+  "categoryId": 1
+}
+
+### Create Blind Box via Gateway (RECOMMENDED - goes through authentication)
+###
+POST {{gateway-url}}/api/blindboxes
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "hehe via gateway",
+  "rarity": "RARE",
+  "price": 100,
+  "stock": 10,
+  "categoryId": 1
+}
+
+### Create Blind Box via Gateway (Fail validation)
+###
+POST {{gateway-url}}/api/blindboxes
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "rarity": "",
+  "stock": 300
+}
+
+### Update Blind Box (Direct to Service)
+###
+PUT {{product-service-url}}/api/blindboxes/1
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "Updated Box Direct",
+  "rarity": "SUPER RARE",
+  "price": 200,
+  "stock": 5,
+  "categoryId": 1
+}
+
+### Update Blind Box via Gateway (RECOMMENDED)
+###
+PUT {{gateway-url}}/api/blindboxes/7
+Authorization: Bearer {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "Updated Box via Gateway",
+  "rarity": "LEGENDARY",
+  "price": 500,
+  "stock": 3,
+  "categoryId": 1
+}
+
+### Delete Blind Box (Direct to Service)
+###
+DELETE {{product-service-url}}/api/blindboxes/1
+Authorization: Bearer {{access-token}}
+
+### Delete Blind Box via Gateway (RECOMMENDED)
+###
+DELETE {{gateway-url}}/api/blindboxes/3
+Authorization: Bearer {{access-token}}
+
+### Authenticate as ADMIN and receive JWT tokens
+###
+POST {{gateway-url}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{admin-email}}",
+  "password": "{{admin-password}}"
+}
+
+### Authenticate as MEMBER and receive JWT tokens
+###
+POST {{gateway-url}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{member-email}}",
+  "password": "{{admin-password}}"
+}
+
+### Test Only Endpoint (no auth) via Gateway by pass authentication middleware (WebSecurityConfig of AuthService and JwtAuthFilter of gateway)
+###
+GET {{gateway-url}}/api/auth/users/test-only
+Content-Type: application/json

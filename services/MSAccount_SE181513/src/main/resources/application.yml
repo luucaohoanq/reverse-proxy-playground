@@ -1,0 +1,26 @@
+api:
+  prefix: /api
+
+spring:
+  application:
+    name: user-service
+
+  profiles:
+    active: test
+
+server:
+  port: 4007
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+
+# JWT Configuration
+jwt:
+  secretKey: TaqlmGv1iEDMRiFp/pHuID1+T84IABfuA0xXh4GhiUI=
+  expiration: 3600 # 1 hour in seconds
+  expiration-refresh-token: 86400 # 24 hours in seconds

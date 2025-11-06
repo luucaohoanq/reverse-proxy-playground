@@ -1,0 +1,123 @@
+networks:
+  mss-pe-server:
+    driver: bridge
+
+volumes:
+  postgres:
+
+services:
+
+  postgresql-hehehe:
+    container_name: pg_sql
+    image: docker.io/library/postgres:17.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+      POSTGRES_DB: mss-blindbox
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5433:5432"
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  postgresql-hihihi:
+    container_name: pg_sql_hihihi
+    image: docker.io/library/postgres:17.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+      POSTGRES_DB: mss-brand
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5434:5432"
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  postgresql-hohoho:
+    container_name: pg_sql_hohoho
+    image: docker.io/library/postgres:17.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ai_khoc_noi_dau_nay
+      POSTGRES_DB: mss-account
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U "${POSTGRES_USER:-admin}"' ]
+      start_period: 30s
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "5435:5432"
+    networks:
+      - mss-pe-server
+    restart: unless-stopped
+
+  gateway:
+    container_name: mss-pe-gateway-service
+    image: lcaohoanq/mss-pe-gateway
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "4000:4000"
+    networks:
+      - mss-pe-server
+
+  blind-box:
+    container_name: mss-pe-blind-box-service
+    image: lcaohoanq/mss-pe-blindbox:hehehe
+    ports:
+      - "4006:4006"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      postgresql-hehehe:
+        condition: service_healthy
+    networks:
+      - mss-pe-server
+
+  brand:
+    container_name: mss-pe-brand-service
+    image: lcaohoanq/mss-pe-brand:hihihi
+    ports:
+      - "4005:4005"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      postgresql-hihihi:
+        condition: service_healthy
+    networks:
+      - mss-pe-server
+
+  account:
+    container_name: mss-pe-account-service
+    image: lcaohoanq/mss-pe-account:hohoho
+    ports:
+      - "4007:4007"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      postgresql-hohoho:
+        condition: service_healthy
+    networks:
+      - mss-pe-server
