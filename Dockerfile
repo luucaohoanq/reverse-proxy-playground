@@ -14,7 +14,7 @@ ARG SERVICE_PATH
 # 1. Copy all POMs first to create a stable dependency layer
 # This is the key to caching. It's verbose, but it's correct.
 COPY pom.xml .
-COPY .mvn .mvn
+#COPY .mvn .mvn
 #COPY services/pom.xml ./services/
 
 # --- Add ALL your modules here ---

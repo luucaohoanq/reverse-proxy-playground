@@ -1,0 +1,86 @@
+2025-11-06 10:27:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-06 10:27:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-06 10:27:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-06 10:27:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-11-06 10:27:03 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c03b49f8-178b-396a-b8a2-bc3b0160c9bf
+2025-11-06 10:27:04 [main] DEBUG o.s.c.g.config.GatewayProperties - Routes supplied from Gateway Properties: [RouteDefinition{id='auth-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/auth/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/auth/(?<segment>.*), _genkey_1=/api/auth/$\{segment}}}], uri=http://localhost:4007, order=0, metadata={}, enabled=true}, RouteDefinition{id='brand-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/brands/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/brands/(?<segment>.*), _genkey_1=/api/brands/$\{segment}}}], uri=http://localhost:4005, order=0, metadata={}, enabled=true}, RouteDefinition{id='brand-service-legacy', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/brand/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/brand/(?<segment>.*), _genkey_1=/api/brand/$\{segment}}}], uri=http://localhost:4005, order=0, metadata={}, enabled=true}, RouteDefinition{id='blindboxes-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/blindboxes/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/blindboxes/(?<segment>.*), _genkey_1=/api/blindboxes/$\{segment}}}], uri=http://localhost:4006, order=0, metadata={}, enabled=true}]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-11-06 10:27:04 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-11-06 10:27:05 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-06 10:27:05 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 4000 (http)
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying {_genkey_0=/api/auth/**} to Path
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying filter {_genkey_0=/api/auth/(?<segment>.*), _genkey_1=/api/auth/$\{segment}} to RewritePath
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth-service
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying {_genkey_0=/api/brands/**} to Path
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying filter {_genkey_0=/api/brands/(?<segment>.*), _genkey_1=/api/brands/$\{segment}} to RewritePath
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: brand-service
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying {_genkey_0=/api/brand/**} to Path
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying filter {_genkey_0=/api/brand/(?<segment>.*), _genkey_1=/api/brand/$\{segment}} to RewritePath
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: brand-service-legacy
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying {_genkey_0=/api/blindboxes/**} to Path
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying filter {_genkey_0=/api/blindboxes/(?<segment>.*), _genkey_1=/api/blindboxes/$\{segment}} to RewritePath
+2025-11-06 10:27:05 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: blindboxes-service
+2025-11-06 10:27:22 [reactor-http-epoll-3] WARN  r.n.http.server.HttpServerOperations - [fdf5aeb1, L:/[0:0:0:0:0:0:0:1]:4000 - R:/[0:0:0:0:0:0:0:1]:53138] Decoding failed: FULL_REQUEST(decodeResult: failure(io.netty.handler.codec.http.InvalidLineSeparatorException: Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2025-11-06 10:27:22 [reactor-http-epoll-4] WARN  r.n.http.server.HttpServerOperations - [a97249ee, L:/[0:0:0:0:0:0:0:1]:4000 - R:/[0:0:0:0:0:0:0:1]:53148] Decoding failed: FULL_REQUEST(decodeResult: failure(io.netty.handler.codec.http.InvalidLineSeparatorException: Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2025-11-06 10:27:22 [reactor-http-epoll-2] WARN  r.n.http.server.HttpServerOperations - [e09750bf, L:/[0:0:0:0:0:0:0:1]:4000 - R:/[0:0:0:0:0:0:0:1]:53170] Decoding failed: FULL_REQUEST(decodeResult: failure(io.netty.handler.codec.http.InvalidLineSeparatorException: Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2025-11-06 10:27:22 [reactor-http-epoll-1] WARN  r.n.http.server.HttpServerOperations - [1274c97e, L:/[0:0:0:0:0:0:0:1]:4000 - R:/[0:0:0:0:0:0:0:1]:53156] Decoding failed: FULL_REQUEST(decodeResult: failure(io.netty.handler.codec.http.InvalidLineSeparatorException: Line Feed must be preceded by Carriage Return when terminating HTTP start- and header field-lines), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2025-11-06 10:27:53 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-06 10:27:53 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-11-06 10:27:58 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-11-06 10:27:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-06 10:27:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-06 10:27:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-11-06 10:27:59 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c03b49f8-178b-396a-b8a2-bc3b0160c9bf
+2025-11-06 10:28:00 [main] DEBUG o.s.c.g.config.GatewayProperties - Routes supplied from Gateway Properties: [RouteDefinition{id='auth-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/auth/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/auth/(?<segment>.*), _genkey_1=/api/auth/$\{segment}}}], uri=http://localhost:4007, order=0, metadata={}, enabled=true}, RouteDefinition{id='brand-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/brands/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/brands/(?<segment>.*), _genkey_1=/api/brands/$\{segment}}}], uri=http://localhost:4005, order=0, metadata={}, enabled=true}, RouteDefinition{id='brand-service-legacy', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/brand/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/brand/(?<segment>.*), _genkey_1=/api/brand/$\{segment}}}], uri=http://localhost:4005, order=0, metadata={}, enabled=true}, RouteDefinition{id='blindboxes-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/blindboxes/**}}], filters=[FilterDefinition{name='AddRequestHeader', args={_genkey_0=X-From-Gateway, _genkey_1=true}}, FilterDefinition{name='RewritePath', args={_genkey_0=/api/blindboxes/(?<segment>.*), _genkey_1=/api/blindboxes/$\{segment}}}], uri=http://localhost:4006, order=0, metadata={}, enabled=true}]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-11-06 10:28:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-11-06 10:28:00 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-06 10:28:00 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 4000 (https)
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying {_genkey_0=/api/auth/**} to Path
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service applying filter {_genkey_0=/api/auth/(?<segment>.*), _genkey_1=/api/auth/$\{segment}} to RewritePath
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth-service
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying {_genkey_0=/api/brands/**} to Path
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service applying filter {_genkey_0=/api/brands/(?<segment>.*), _genkey_1=/api/brands/$\{segment}} to RewritePath
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: brand-service
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying {_genkey_0=/api/brand/**} to Path
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition brand-service-legacy applying filter {_genkey_0=/api/brand/(?<segment>.*), _genkey_1=/api/brand/$\{segment}} to RewritePath
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: brand-service-legacy
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying {_genkey_0=/api/blindboxes/**} to Path
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying filter {_genkey_0=X-From-Gateway, _genkey_1=true} to AddRequestHeader
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition blindboxes-service applying filter {_genkey_0=/api/blindboxes/(?<segment>.*), _genkey_1=/api/blindboxes/$\{segment}} to RewritePath
+2025-11-06 10:28:01 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: blindboxes-service

@@ -1,0 +1,8 @@
+2025-11-06 10:27:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 26837 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/reverse-proxy-playground/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/reverse-proxy-playground)
+2025-11-06 10:27:02 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-06 10:27:02 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - No active profile set, falling back to 1 default profile: "default"
+2025-11-06 10:27:05 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 3.489 seconds (process running for 4.941)
+2025-11-06 10:27:58 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Starting ApiGatewaySe181513Application using Java 21.0.7 with PID 27692 (/mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/reverse-proxy-playground/services/APIGateway_SE181513/target/classes started by lcaohoanq in /mnt/26a0de97-0abd-45e1-b610-129d3045f430/project/reverse-proxy-playground)
+2025-11-06 10:27:58 [main] DEBUG c.f.m.a.ApiGatewaySe181513Application - Running with Spring Boot v3.4.10, Spring v6.2.11
+2025-11-06 10:27:58 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - The following 1 profile is active: "https"
+2025-11-06 10:28:01 [main] INFO  c.f.m.a.ApiGatewaySe181513Application - Started ApiGatewaySe181513Application in 2.965 seconds (process running for 4.006)

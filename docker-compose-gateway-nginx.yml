@@ -1,0 +1,38 @@
+networks:
+  app_net:
+    driver: bridge
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/certs:/etc/ssl/private:ro
+#      - ./frontend/dist:/usr/share/nginx/html:ro   # nếu có frontend build sẵn
+    depends_on:
+      - backend
+    networks:
+      - app_net
+
+  backend:
+    container_name: mss-pe-gateway-service
+    image: lcaohoanq/mss-pe-gateway
+    build:
+      context: services/APIGateway_SE181513
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    expose:
+      - "4000"
+    networks:
+      - app_net
+
+
+# docker compose -f docker-compose-gateway-nginx.yml up -d --build
+# fronend: https://localhost/
+# backend: https://localhost/api/
